@@ -45,6 +45,18 @@ const PizzaList = () => {
           descText='Суперская пицца хули думать покупай'
           priceText='$35.0'
         />
+        <PizzaCard
+          imageUrl='/img/pizza.png'
+          titleText='Кайф'
+          descText='Суперская пицца хули думать покупай'
+          priceText='$35.0'
+        />
+        <PizzaCard
+          imageUrl='/img/pizza.png'
+          titleText='Просто Бомба'
+          descText='Суперская пицца хули думать покупай'
+          priceText='$35.0'
+        />
       </div>
 
     </div>
