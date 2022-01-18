@@ -25,19 +25,18 @@
 }
 
 .button {
-    background-color: #d1411e;
-    opacity: 0.5;
-    color: white;
-    min-width: 100px;
-    max-width: 100px;
-    height: 30px;
+    background-color: #faece8;
+    color: #d1411e;
+    max-width: 130px;
+    min-height: 30px;
     border-radius: 30px;
     border: none;
     font-size: 15px;
-    padding: 5px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
 .button:hover {
-    opacity: 1;
+    background-color: #d1411e;
+    color: #faece8;
 }

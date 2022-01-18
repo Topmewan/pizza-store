@@ -11,18 +11,17 @@ const cordPizza = {
 }
 
 const Product = () => {
-
   const [size, setSize] = useState(0);
 
-  const handleChoose = (param) => {
-    if(param === 0){
-      setSize(0);
+  const handleChoose = (sizePrice) => {
+    if (sizePrice === 0) {
+      setSize(sizePrice);
     }
-    if(param === 1){
-      setSize(1);
+    if (sizePrice === 1) {
+      setSize(sizePrice);
     }
-    if(param === 2){
-      setSize(2);
+    if (sizePrice === 2) {
+      setSize(sizePrice);
     }
   }
 
@@ -57,6 +56,28 @@ const Product = () => {
           </div>
         </div>
         <h3 className={styles.choose}>Выберите дополнительные ингридиенты</h3>
+        <div className={styles.ingredients}>
+          <div className={styles.option}>
+            <input type="checkbox" id='double' name='double' className={styles.checkbox}/>
+            <label htmlFor="double">Двойные ингредиенты</label>
+          </div>
+          <div className={styles.option}>
+            <input type="checkbox" id='spicy' name='spicy' className={styles.checkbox}/>
+            <label htmlFor="double">Острый перец</label>
+          </div>
+          <div className={styles.option}>
+            <input type="checkbox" id='onion' name='onion' className={styles.checkbox}/>
+            <label htmlFor="double">Чеснок</label>
+          </div>
+          <div className={styles.option}>
+            <input type="checkbox" id='garlic' name='garlic' className={styles.checkbox}/>
+            <label htmlFor="double">Лук</label>
+          </div>
+        </div>
+        <div className={styles.add}>
+          <input type="number" defaultValue={1} className={styles.quantity}/>
+          <button className={styles.button}>Добавить в корзину</button>
+        </div>
       </div>
     </div>
   );
