@@ -16,13 +16,16 @@ const Order = () => {
       <div className={styles.left}>
         <div className={styles.row}>
           <table className={styles.table}>
-            <tr className={styles.tr}>
+            <thead>
+            <tr className={styles.trTitle}>
               <th>ID Заказа</th>
               <th>Исполнитель</th>
               <th>Адрес доставки</th>
               <th>Итого</th>
             </tr>
-            <tr>
+            </thead>
+            <tbody>
+            <tr className={styles.tr}>
               <td>
                 <span className={styles.id}>12143242</span>
               </td>
@@ -36,6 +39,7 @@ const Order = () => {
                 <span className={styles.total}>$65.00</span>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.row}>

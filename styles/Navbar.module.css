@@ -15,11 +15,13 @@
     display: flex;
     align-items: center;
 }
-.item:last-child{
-    justify-content: flex-end;
-}
+
 .item:nth-child(2){
     flex: 3;
+}
+
+.item:last-child{
+    justify-content: flex-end;
 }
 
 .callButton{
@@ -74,4 +76,13 @@
     justify-content: center;
     color: #d1411e;
     font-weight: bold;
+}
+
+@media screen and (max-width: 480px){
+    .item:nth-child(2){
+        display: none;
+    }
+    .item:nth-child(1){
+        flex: 3;
+    }
 }

@@ -15,7 +15,7 @@
     margin-right: 10px;
 }
 
-.totalText{
+.totalText {
     padding-top: 10px;
 }
 
@@ -34,4 +34,14 @@
 .button:hover {
     background-color: #d1411e;
     color: #faece8;
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        width: 100%;
+    }
+    .button {
+        height: 50px;
+        padding: 10px 20px;
+    }
 }
