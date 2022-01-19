@@ -8,7 +8,6 @@ const PizzaCard = ({imageUrl, titleText, priceText, descText}) => {
       <h1 className={styles.title}>{titleText}</h1>
       <span className={styles.price}>{priceText}</span>
       <p className={styles.desc}>{descText}</p>
-      <button className={styles.button}>Выбрать</button>
     </div>
   );
 };
