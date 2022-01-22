@@ -1,0 +1,42 @@
+.button {
+    height: 30px;
+    background-color: #faece8;
+    color: #d1411e;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #d1411e;
+    color: #faece8;
+}
+
+.payButton {
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color: #faece8;
+    color: #d1411e;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+
+}
+
+.payButton:hover {
+    background-color: #d1411e;
+    color: #faece8;
+}
+
+@media screen and (max-width: 480px) {
+    .button {
+        height: 50px;
+        padding: 10px 20px;
+    }
+}
+

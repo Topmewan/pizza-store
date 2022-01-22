@@ -1,7 +1,7 @@
 import styles from '../styles/PizzaList.module.css';
 import PizzaCard from "./PizzaCard";
 
-const PizzaList = () => {
+const PizzaList = ({pizzaList}) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>ЛУЧШАЯ ПИЦЦА В ГОРОДЕ</h1>
@@ -9,56 +9,19 @@ const PizzaList = () => {
         Самая вкусная пицца,которую вы пробовали! Самые сочные и свежие ингредиенты! Налетай,покупай и кайфуй.
       </p>
       <div className={styles.wrapper}>
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Пепперони'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$19.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Гавайская'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$20.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Четыре Сыра'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$15.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Барбекю'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$25.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Фристайло'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$30.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Зенит'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$35.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Кайф'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$35.0'
-        />
-        <PizzaCard
-          imageUrl='/img/pizza.png'
-          titleText='Просто Бомба'
-          descText='Суперская пицца хули думать покупай'
-          priceText='$35.0'
-        />
+        {pizzaList.length > 0
+          ? pizzaList.map((pizza) =>
+            <PizzaCard
+              key={pizza._id}
+              pizzaId={pizza._id}
+              imageUrl={pizza.img}
+              titleText={pizza.title}
+              descText={pizza.desc}
+              priceText={pizza.prices[0]}
+            />
+          )
+          : <h1>No data</h1>}
       </div>
-
     </div>
   );
 };

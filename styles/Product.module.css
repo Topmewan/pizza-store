@@ -86,23 +86,7 @@
 .quantity {
     width: 50px;
     height: 30px;
-}
-
-.button {
-    height: 30px;
-    margin-left: 10px;
-    background-color: #faece8;
-    color: #d1411e;
-    cursor: pointer;
-    border: none;
-    font-weight: 500;
-    border-radius: 10px;
-    padding: 0 20px;
-}
-
-.button:hover {
-    background-color: #d1411e;
-    color: #faece8;
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 480px) {

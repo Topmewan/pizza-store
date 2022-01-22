@@ -1,9 +1,11 @@
 import styles from '../../styles/Order.module.css';
 import OrderDetails from "../../components/Ui/OrderDetails/OrderDetails";
 import Image from "next/image";
+import {fetchApi, orderUrl} from "../../utils/fetchApi";
+import Button from '../../components/Ui/Button/Button';
 
-const Order = () => {
-  const status = 0;
+const Order = ({order}) => {
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -19,7 +21,7 @@ const Order = () => {
             <thead>
             <tr className={styles.trTitle}>
               <th>ID Заказа</th>
-              <th>Исполнитель</th>
+              <th>Заказчик</th>
               <th>Адрес доставки</th>
               <th>Итого</th>
             </tr>
@@ -27,16 +29,16 @@ const Order = () => {
             <tbody>
             <tr className={styles.tr}>
               <td>
-                <span className={styles.id}>12143242</span>
+                <span className={styles.id}>{order._id}</span>
               </td>
               <td>
-                <span className={styles.customer}>Kaif Kaif</span>
+                <span className={styles.customer}>{order.customer}</span>
               </td>
               <td>
-                <span className={styles.address}>Nevsky pr. 9/1 </span>
+                <span className={styles.address}>{order.address}</span>
               </td>
               <td>
-                <span className={styles.total}>$65.00</span>
+                <span className={styles.total}>{order.total} RUB</span>
               </td>
             </tr>
             </tbody>
@@ -74,10 +76,23 @@ const Order = () => {
         </div>
       </div>
       <div className={styles.right}>
-        <OrderDetails buttonText='Оплатить'/>
+        <OrderDetails subtotalPrice={order.total} totalPrice={order.total}>
+          <Button>
+            Завершить
+          </Button>
+        </OrderDetails>
       </div>
     </div>
   );
 };
+
+export const getServerSideProps = async ({params}) => {
+  const res = await fetchApi(`${orderUrl}/${params.id}`);
+  return {
+    props: {
+      order: res
+    }
+  }
+}
 
 export default Order;
