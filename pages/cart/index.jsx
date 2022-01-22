@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import {reset} from "../../redux/reducers/cartSlice";
-import {useSelector,useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import axios from "axios";
 import {useRouter} from 'next/router';
 
