@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 
 const Navbar = () => {
   const {quantity} = useSelector(state => state.cartReducer);
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -26,7 +27,9 @@ const Navbar = () => {
           <Image src='/img/orlando-rage.svg' alt='cart' width='160px' height='69px'/>
           <li className={styles.listItem}>Новости</li>
           <li className={styles.listItem}>Блог</li>
-          <li className={styles.listItem}>Контакты</li>
+          <Link href={'/admin'}>
+            <li className={styles.listItem}>Админ Панель</li>
+          </Link>
         </ul>
       </div>
       <Link href={'/cart'} passHref>
