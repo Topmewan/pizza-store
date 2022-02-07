@@ -14,7 +14,6 @@ const Login = () => {
   const [formValues, setFormValues] = useState(values);
   const [error, setError] = useState(false);
   const router = useRouter();
-  console.log(formValues.username, formValues.password)
 
   const handleChange = (e) => {
     setFormValues({...formValues, [e.target.name]: e.target.value})
