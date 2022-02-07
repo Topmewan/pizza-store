@@ -1,11 +1,13 @@
 import Image from "next/image";
-import {useState} from "react";
-import styles from "../../styles/Admin.module.css";
+import {useEffect, useState} from "react";
 import {fetchApi, baseUrl, orderUrl} from '../../utils/fetchApi';
 import axios from 'axios';
 import Button from '../../components/Ui/Button/Button';
 import delIcon from '../../public/img/iconmonstr-trash-can-2.svg';
 import editIcon from '../../public/img/iconmonstr-pencil-9.svg';
+
+import styles from "../../styles/Admin.module.css";
+
 
 const Admin = ({orders, products}) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -34,12 +36,13 @@ const Admin = ({orders, products}) => {
     }
   }
 
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
         <h1 className={styles.title}>Каталог</h1>
         <table className={styles.table}>
-          <tbody>
+          <thead>
           <tr className={styles.trTitle}>
             <th>Фото</th>
             <th className={styles.trId}>ID</th>
@@ -47,10 +50,10 @@ const Admin = ({orders, products}) => {
             <th>Цена</th>
             <th></th>
           </tr>
-          </tbody>
+          </thead>
+          <tbody>
           {pizzaList.map((product) => (
-            <tbody key={product._id}>
-            <tr className={styles.trTitle}>
+            <tr className={styles.trTitle} key={product._id}>
               <td>
                 <Image
                   src={product.img}
@@ -75,8 +78,8 @@ const Admin = ({orders, products}) => {
                 </button>
               </td>
             </tr>
-            </tbody>
           ))}
+          </tbody>
         </table>
       </div>
       <div className={styles.item}>
