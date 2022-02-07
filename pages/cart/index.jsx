@@ -99,7 +99,6 @@ const Cart = () => {
             <th>Дополнительно</th>
             <th>Цена</th>
             <th>Кол-во</th>
-            <th>Итого</th>
           </tr>
           </thead>
           <tbody>
@@ -123,9 +122,6 @@ const Cart = () => {
               </td>
               <td>
                 <span className={styles.quantity}>{product.quantity}</span>
-              </td>
-              <td>
-                <span className={styles.total}>{cart.total && cart.total} RUB</span>
               </td>
             </tr>
           )}
