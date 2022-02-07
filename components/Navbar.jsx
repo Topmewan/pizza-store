@@ -41,11 +41,7 @@ const Navbar = () => {
           <Link href={'/'}>
             <li className={styles.listItem}>Главная</li>
           </Link>
-          <li className={styles.listItem}>Каталог</li>
-          <li className={styles.listItem}>Меню</li>
           <Image src='/img/orlando-rage.svg' alt='cart' width='160px' height='69px'/>
-          <li className={styles.listItem}>Новости</li>
-          <li className={styles.listItem}>Блог</li>
           <Link href={'/admin'}>
             <li className={styles.listItem}>Админ Панель</li>
           </Link>
